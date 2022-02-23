@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Common.HolidayRental.Repositories
+﻿namespace Common.HolidayRental.Repositories
 {
     public interface IGetByEchangeRepository<TEntity>
     {

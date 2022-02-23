@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL.HolidayRental", "DAL.Ho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.HolidayRental", "Common.HolidayRental\Common.HolidayRental.csproj", "{26E148D1-5F10-4D9A-ABF6-E471018C5FCF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BLL", "BLL", "{A9D5ABD0-B8AE-4157-8B6D-8580D25A4D99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL.HolidayRental", "BLL.HolidayRental\BLL.HolidayRental.csproj", "{E4BFC8BA-5B92-43A7-9134-8B95A0394747}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,12 +41,17 @@ Global
 		{26E148D1-5F10-4D9A-ABF6-E471018C5FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26E148D1-5F10-4D9A-ABF6-E471018C5FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26E148D1-5F10-4D9A-ABF6-E471018C5FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4BFC8BA-5B92-43A7-9134-8B95A0394747}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4BFC8BA-5B92-43A7-9134-8B95A0394747}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4BFC8BA-5B92-43A7-9134-8B95A0394747}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4BFC8BA-5B92-43A7-9134-8B95A0394747}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2CFC6D6C-E76C-406E-8A43-5ABACAB10BF4} = {DAD101BD-81E9-4534-8D72-AF56202821F2}
+		{E4BFC8BA-5B92-43A7-9134-8B95A0394747} = {A9D5ABD0-B8AE-4157-8B6D-8580D25A4D99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27899870-7CEA-4A05-A2CC-D1884DDA0644}

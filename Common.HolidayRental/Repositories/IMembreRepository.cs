@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Common.HolidayRental.Repositories
 {
-    public interface IMembreRepository<TMembre> : IRepository<TMembre, string>,
+    public interface IMembreRepository<TMembre> : IRepository<TMembre, int>,
         IGetByEchangeRepository<TMembre>
     {
-        IEnumerable<TMembre> GetByIdentifiant(string identifiant);
+        IEnumerable<TMembre> GetById(int idMembre);
     }
 }

@@ -60,7 +60,19 @@ namespace DAL.HolidayRental.Repositories
 
         public Membre GetByEchangeId(int idEchange)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT [Membre].[idMembre],[nom],[prenom] FROM [Membre] JOIN [Echange] ON [Membre].[idMembre] = [idEchange] WHERE [Echange].[idEchange] = @id";
+                    SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = idEchange };
+                    command.Parameters.Add(p_id);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read()) return Mapper.ToMembre(reader);
+                    return null;
+                }
+            }
         }
 
         public IEnumerable<Membre> GetById(int idMembre)
@@ -68,14 +80,40 @@ namespace DAL.HolidayRental.Repositories
             throw new NotImplementedException();
         }
 
-        public string Insert(Membre entity)
+        public int Insert(Membre entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "INSERT INTO [Membre]([nom], [prenom]) OUTPUT [inserted].[idMembre] VALUES (@nom, @prenom)";
+                    SqlParameter p_nom = new SqlParameter { ParameterName = "nom", Value = entity.nom };
+                    SqlParameter p_prenom = new SqlParameter { ParameterName = "prenom", Value = entity.prenom };
+                    command.Parameters.Add(p_nom);
+                    command.Parameters.Add(p_prenom);
+                    connection.Open();
+                    return (int)command.ExecuteScalar();
+                }
+            }
         }
 
         public void Update(int id, Membre entity)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = new SqlConnection(_connString))
+            {
+                using (SqlCommand command = connection.CreateCommand())
+                {
+                    command.CommandText = "UPDATE [Membre] SET [nom] = @nom, [prenom] = @prenom WHERE [idMembre] = @id";
+                    SqlParameter p_nom = new SqlParameter { ParameterName = "nom", Value = entity.nom };
+                    SqlParameter p_prenom = new SqlParameter { ParameterName = "prenom", Value = entity.prenom };
+                    SqlParameter p_id = new SqlParameter() { ParameterName = "id", Value = id };
+                    command.Parameters.Add(p_nom);
+                    command.Parameters.Add(p_prenom);
+                    command.Parameters.Add(p_id);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
         int IRepository<Membre, int>.Insert(Membre entity)

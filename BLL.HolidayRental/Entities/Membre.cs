@@ -1,4 +1,6 @@
-﻿namespace BLL.HolidayRental.Entities
+﻿using System;
+
+namespace BLL.HolidayRental.Entities
 {
     public class Membre
     {
@@ -23,6 +25,11 @@
             identifiant = Identifiant;
             motDePasse = MotDePasse;
             CGV = Cgv;
+        }
+
+        public global::ASP.HolidayRental.Models.MembreListItem ToListItem()
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,8 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
     <Folder Include="Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common.HolidayRental\Common.HolidayRental.csproj" />
+    <ProjectReference Include="..\DAL.HolidayRental\DAL.HolidayRental.csproj" />
   </ItemGroup>
 
 </Project>

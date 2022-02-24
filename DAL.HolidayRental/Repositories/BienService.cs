@@ -15,10 +15,10 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "DELETE FROM [Bien] WHERE [Id] = @id";         
+                    command.CommandText = "DELETE FROM [Bien] WHERE [Id] = @id";
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     command.ExecuteNonQuery();
                 }
             }
@@ -61,10 +61,10 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [Bien].[idBien], [descriptionCourte], [pays] FROM [Bien] JOIN [Echange] ON [Bien].[idBien] = [idBien] WHERE [Echange].[idEchange] = @id";                    
+                    command.CommandText = "SELECT [Bien].[idBien], [descriptionCourte], [pays] FROM [Bien] JOIN [Echange] ON [Bien].[idBien] = [idBien] WHERE [Echange].[idEchange] = @id";
                     SqlParameter p_id = new SqlParameter("id", idEchange);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read()) return Mapper.ToBien(reader);
                     return null;
@@ -78,10 +78,10 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idBien], [descriptionCourte], [pays] FROM [Bien] WHERE IDBIEN([idBien]) = @idBien";                    
+                    command.CommandText = "SELECT [idBien], [descriptionCourte], [pays] FROM [Bien] WHERE IDBIEN([idBien]) = @idBien";
                     SqlParameter p_id = new SqlParameter("idBien", idBien);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToBien(reader);
                 }
@@ -95,12 +95,12 @@ namespace DAL.HolidayRental.Repositories
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandType = System.Data.CommandType.StoredProcedure;
-                    command.CommandText = "SP_Bien_Insert";                    
+                    command.CommandText = "SP_Bien_Insert";
                     SqlParameter p_descriptionCourte = new SqlParameter("descriptionCourte", entity.descriptionCourte);
                     command.Parameters.Add(p_descriptionCourte);
                     SqlParameter p_pays = new SqlParameter("pays", entity.pays);
                     command.Parameters.Add(p_pays);
-                    connection.Open();                    
+                    connection.Open();
                     return (int)command.ExecuteScalar();
                 }
             }
@@ -113,14 +113,14 @@ namespace DAL.HolidayRental.Repositories
                 using (SqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = "UPDATE [Bien] SET [descriptionCourte] = @descriptionCourte, [pays] = @pays WHERE [idBien] = @idBien";
-                    
+
                     SqlParameter p_descriptionCourte = new SqlParameter("descriptionCourte", entity.descriptionCourte);
                     command.Parameters.Add(p_descriptionCourte);
                     SqlParameter p_pays = new SqlParameter("pays", entity.pays);
                     command.Parameters.Add(p_pays);
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     command.ExecuteNonQuery();
                 }
             }

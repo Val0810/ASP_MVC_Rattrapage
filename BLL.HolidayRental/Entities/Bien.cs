@@ -18,9 +18,10 @@ namespace BLL.HolidayRental.Entities
         public int nombrePersonne { get; set; }
         public int nombreSalleDeBain { get; set; }
         public int nombreWC { get; set; }
+        public int idEchange { get; set; }
         public Echange Echange { get; set; }
 
-        public Bien(int IdBien, string DescriptionCourte, string DescriptionLongue, string Pays, string Ville, string Rue, string Numero, string CodePostal, string Photo, int NombrePersonne, int NombreSalleDeBain, int NombreWC)
+        public Bien(int IdBien, string DescriptionCourte, string DescriptionLongue, string Pays, string Ville, string Rue, string Numero, string CodePostal, string Photo, int NombrePersonne, int NombreSalleDeBain, int NombreWC, int IdEchange)
         {
             idBien = IdBien;
             descriptionCourte = DescriptionCourte;
@@ -34,6 +35,8 @@ namespace BLL.HolidayRental.Entities
             nombrePersonne = NombrePersonne;
             nombreSalleDeBain = NombreSalleDeBain;
             nombreWC = NombreWC;
+            idEchange = IdEchange;
+            Echange = null;
         }
     }
 }

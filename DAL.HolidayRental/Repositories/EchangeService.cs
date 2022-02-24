@@ -15,10 +15,10 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "DELETE FROM [Echange] WHERE [idEchange] = @id";                    
+                    command.CommandText = "DELETE FROM [Echange] WHERE [idEchange] = @id";
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     command.ExecuteNonQuery();
                 }
             }
@@ -30,10 +30,10 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idEchange], [idMembre],[dateReservation] FROM [Echange] WHERE [dateReservation]=@date";                    
+                    command.CommandText = "SELECT [idEchange], [idMembre],[dateReservation] FROM [Echange] WHERE [dateReservation]=@date";
                     SqlParameter p_dateReservation = new SqlParameter("dateReservation", dateReservation);
                     command.Parameters.Add(p_dateReservation);
-                    connection.Open();                    
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToEchange(reader);
                 }
@@ -49,7 +49,7 @@ namespace DAL.HolidayRental.Repositories
                     command.CommandText = "SELECT [idEchange], [idMembre], [dateReservation] FROM [Echange] WHERE [idEchange] = @id";
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
-                    connection.Open();  
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.Read()) return Mapper.ToEchange(reader);
                     return null;
@@ -63,8 +63,8 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "SELECT [idEchange], [idMembre], [dateReservation] FROM [Echange]";                    
-                    connection.Open();                    
+                    command.CommandText = "SELECT [idEchange], [idMembre], [dateReservation] FROM [Echange]";
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToEchange(reader);
                 }
@@ -79,7 +79,7 @@ namespace DAL.HolidayRental.Repositories
                 {
                     command.CommandText = "SELECT [idEchange], [idMembre], [dateReservation] FROM [Echange] WHERE [idMembre]=@membre"; SqlParameter p_membre = new SqlParameter("membre", idMembre);
                     command.Parameters.Add(p_membre);
-                    connection.Open();                    
+                    connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read()) yield return Mapper.ToEchange(reader);
                 }
@@ -96,7 +96,7 @@ namespace DAL.HolidayRental.Repositories
                     SqlParameter p_membre = new SqlParameter("membre", entity.idMembre);
                     command.Parameters.Add(p_membre);
                     SqlParameter p_date = new SqlParameter("date", entity.dateReservation);
-                    command.Parameters.Add(p_date);               
+                    command.Parameters.Add(p_date);
                     connection.Open();
                     return (int)command.ExecuteScalar();
                 }
@@ -109,14 +109,14 @@ namespace DAL.HolidayRental.Repositories
             {
                 using (SqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = "UPDATE [Echange] SET [idMembre] = @membre, [dateReservation] = @date WHERE [Id] = @id";                    
-                    SqlParameter p_membre= new SqlParameter("cinema", entity.idMembre);
-                    command.Parameters.Add(p_membre);                    
+                    command.CommandText = "UPDATE [Echange] SET [idMembre] = @membre, [dateReservation] = @date WHERE [Id] = @id";
+                    SqlParameter p_membre = new SqlParameter("cinema", entity.idMembre);
+                    command.Parameters.Add(p_membre);
                     SqlParameter p_date = new SqlParameter("date", entity.dateReservation);
                     command.Parameters.Add(p_date);
                     SqlParameter p_id = new SqlParameter("id", id);
                     command.Parameters.Add(p_id);
-                    connection.Open();                    
+                    connection.Open();
                     command.ExecuteNonQuery();
                 }
             }

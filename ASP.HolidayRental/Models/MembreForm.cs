@@ -8,9 +8,6 @@ namespace ASP.HolidayRental.Models
 {
     public class MembreForm
     {
-        [Required(ErrorMessage = "Ce champs est obligatoire.")]
-        [StringLength(maximumLength: 16, MinimumLength = 2, ErrorMessage = "La taille doit être comprise entre 2 et 16")]
-
         [ScaffoldColumn(false)]
         [Key]
         public string nom { get; set; }
@@ -29,5 +26,6 @@ namespace ASP.HolidayRental.Models
         [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public bool CGV { get; set; }
         [Required(ErrorMessage = "Ce champs est obligatoire.")]
-    
+
+    }
 }

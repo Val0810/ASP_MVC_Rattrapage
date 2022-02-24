@@ -18,7 +18,7 @@ namespace ASP.HolidayRental.Controllers
 
         public IActionResult Index()
         {
-            _httpContext.HttpContext.Session.SetObjectAsJson("Titre", "Welcome");
+            _httpContext.HttpContext.Session.SetObjectAsJson("Welcome");
             return View();
         }
        

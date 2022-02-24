@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ASP.HolidayRental.Models
 {
@@ -11,6 +7,8 @@ namespace ASP.HolidayRental.Models
         [ScaffoldColumn(false)]
         [Key]
         public string identifiant { get; set; }
+        [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public string motDePasse { get; set; }
+        [Required(ErrorMessage = "Ce champs est obligatoire.")]
     }
 }

@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL.HolidayRental\BLL.HolidayRental.csproj" />
     <ProjectReference Include="..\Common.HolidayRental\Common.HolidayRental.csproj" />
-    <ProjectReference Include="..\HomeShare\HoliDayRental.csproj" />
   </ItemGroup>
 
 </Project>

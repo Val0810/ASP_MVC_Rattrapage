@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace BLL.HolidayRental.Entities
+﻿namespace BLL.HolidayRental.Entities
 {
     public class Bien
     {

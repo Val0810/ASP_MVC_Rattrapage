@@ -1,10 +1,8 @@
 ﻿using BLL.HolidayRental.Entities;
 using BLL.HolidayRental.Handlers;
 using Common.HolidayRental.Repositories;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace BLL.HolidayRental.Services
 {

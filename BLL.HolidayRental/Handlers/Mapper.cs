@@ -1,8 +1,5 @@
 ﻿using B = BLL.HolidayRental.Entities;
 using D = DAL.HolidayRental.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BLL.HolidayRental.Handlers
 {

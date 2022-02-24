@@ -7,6 +7,7 @@ namespace BLL.HolidayRental.Services
 {
     public class BienService : IBienRepository<Bien>
     {
+        // je ne vois pas encore d'où vient l'erreur
         private readonly IBienRepository<DAL.Entities.Bien> _bienRepository;
 
         public BienService (IBienRepository<DAL.Entities.Bien> repository)

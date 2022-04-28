@@ -10,6 +10,7 @@ namespace ASP.HolidayRental.Models
     {
         [ScaffoldColumn(false)]
         [Key]
+        [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public string descriptionCourte { get; set; }
         [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public string descriptionLongue { get; set; }
@@ -31,6 +32,5 @@ namespace ASP.HolidayRental.Models
         public int nombreSalleDeBain { get; set; }
         [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public int nombreWC { get; set; }
-        [Required(ErrorMessage = "Ce champs est obligatoire.")]
     }
 }

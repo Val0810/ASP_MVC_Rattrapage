@@ -6,9 +6,11 @@ namespace ASP.HolidayRental.Models
     {
         [ScaffoldColumn(false)]
         [Key]
+
+        [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public string identifiant { get; set; }
+
         [Required(ErrorMessage = "Ce champs est obligatoire.")]
         public string motDePasse { get; set; }
-        [Required(ErrorMessage = "Ce champs est obligatoire.")]
     }
 }

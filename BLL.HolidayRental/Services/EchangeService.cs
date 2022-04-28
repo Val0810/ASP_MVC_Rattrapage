@@ -8,6 +8,7 @@ namespace BLL.HolidayRental.Services
 {
     public class EchangeService : IEchangeRepository<Echange>
     {
+        // Je n'ai pas réussi à résoudre le problème
         private readonly IEchangeRepository<DAL.Entities.Echange> _echangeRepository;
         private readonly IMembreRepository<DAL.Entities.Echange> _membreRepository;
 

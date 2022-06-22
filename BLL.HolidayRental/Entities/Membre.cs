@@ -27,9 +27,6 @@ namespace BLL.HolidayRental.Entities
             CGV = Cgv;
         }
 
-        public global::ASP.HolidayRental.Models.MembreListItem ToListItem()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

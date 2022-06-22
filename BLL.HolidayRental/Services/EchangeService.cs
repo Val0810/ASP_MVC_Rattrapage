@@ -1,4 +1,5 @@
 ﻿using BLL.HolidayRental.Entities;
+using BLL.HolidayRental.Handlers;
 using Common.HolidayRental.Repositories;
 using System;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ namespace BLL.HolidayRental.Services
 {
     public class EchangeService : IEchangeRepository<Echange>
     {
-        // Je n'ai pas réussi à résoudre le problème
-        private readonly IEchangeRepository<DAL.Entities.Echange> _echangeRepository;
-        private readonly IMembreRepository<DAL.Entities.Echange> _membreRepository;
+        
+        private readonly IEchangeRepository<DAL.HolidayRental.Entities.Echange> _echangeRepository;
+        private readonly IMembreRepository<DAL.HolidayRental.Entities.Echange> _membreRepository;
 
         public EchangeService(
-            IEchangeRepository<DAL.Entities.Echange> echangeRepository,
-            IMembreRepository<DAL.Entities.Membre> membreRepository)
+            IEchangeRepository<DAL.HolidayRental.Entities.Echange> echangeRepository,
+            IMembreRepository<DAL.HolidayRental.Entities.Membre> membreRepository)
         {
             _echangeRepository = echangeRepository;
             _membreRepository = membreRepository;
@@ -30,7 +31,7 @@ namespace BLL.HolidayRental.Services
             return _echangeRepository.Get(dateReservation).Select(e =>
             {
                 Echange result = e.ToBLL();
-                result.Membre = _membreRepository.Get(result.idMembre).ToBLL();
+                result.Membre = _membreRepository.Get(result.Membre_idMembre).ToBLL();
                 return result;
             });
         }
@@ -38,7 +39,7 @@ namespace BLL.HolidayRental.Services
         public Echange Get(int id)
         {
             Echange result = _echangeRepository.Get(id).ToBLL();
-            result.idEchange = _membreRepository.Get(result.idMembre).ToBLL();
+            result.Echange = _membreRepository.Get(result.Membre_idMembre).ToBLL();
             return result;
         }
 
@@ -46,7 +47,7 @@ namespace BLL.HolidayRental.Services
         {
             return _echangeRepository.Get().Select(e => {
                 Echange result = e.ToBLL();
-                result.Membre = _membreRepository.Get(result.idMembre).ToBLL();
+                result.Membre = _membreRepository.Get(result.Membre_idMembre).ToBLL();
                 return result;
             });
         }
@@ -56,7 +57,7 @@ namespace BLL.HolidayRental.Services
             return _echangeRepository.GetByIdMembre(idMembre).Select(e =>
             {
                 Echange result = e.ToBLL();
-                result.Membre = _membreRepository.Get(result.idMembre).ToBLL();
+                result.Membre = _membreRepository.Get(result.Membre_idMembre).ToBLL();
                 return result;
             });
         }

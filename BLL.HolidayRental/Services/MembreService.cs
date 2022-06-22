@@ -1,20 +1,18 @@
-﻿using BLL.HolidayRental.Entities;
+﻿using System.Collections.Generic;
+using System.Linq;
+using BLL.HolidayRental.Entities;
 using BLL.HolidayRental.Handlers;
 using Common.HolidayRental.Repositories;
-using DAL.HolidayRental.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 
 namespace BLL.HolidayRental.Services
 {
     public class MembreService : IMembreRepository<Membre>
     {
-        // // Je n'ai pas réussi à corriger les erreurs
-        private readonly IMembreRepository<DAL.Entities.Membre> _membreRepository;
+        
+        private readonly IMembreRepository<DAL.HolidayRental.Entities.Membre> _membreRepository;
 
-        public MembreService(IMembreRepository<DAL.Entities.Membre> repository)
+        public MembreService(IMembreRepository<DAL.HolidayRental.Entities.Membre> repository)
         {
             _membreRepository = repository;
         }

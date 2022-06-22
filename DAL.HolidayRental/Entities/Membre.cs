@@ -1,4 +1,6 @@
-﻿namespace DAL.HolidayRental.Entities
+﻿using System;
+
+namespace DAL.HolidayRental.Entities
 {
     public class Membre
     {

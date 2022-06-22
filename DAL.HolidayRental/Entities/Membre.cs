@@ -13,5 +13,7 @@ namespace DAL.HolidayRental.Entities
         public string identifiant { get; set; }
         public string motDePasse { get; set; }
         public bool CGV { get; set; }
+
+    
     }
 }

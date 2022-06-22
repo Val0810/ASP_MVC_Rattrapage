@@ -1,4 +1,5 @@
 ﻿using BLL.HolidayRental.Entities;
+using BLL.HolidayRental.Handlers;
 using Common.HolidayRental.Repositories;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,10 @@ namespace BLL.HolidayRental.Services
 {
     public class BienService : IBienRepository<Bien>
     {
-        // même erreur que je n'arrive toujours pas à résoudre
-        private readonly IBienRepository<DAL.Entities.Bien> _bienRepository;
+        
+        private readonly IBienRepository<DAL.HolidayRental.Entities.Bien> _bienRepository;
 
-        public BienService (IBienRepository<DAL.Entities.Bien> repository)
+        public BienService (IBienRepository<DAL.HolidayRental.Entities.Bien> repository)
         {
             _bienRepository = repository;
         }

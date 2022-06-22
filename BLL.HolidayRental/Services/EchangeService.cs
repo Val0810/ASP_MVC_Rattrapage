@@ -11,7 +11,7 @@ namespace BLL.HolidayRental.Services
     {
         
         private readonly IEchangeRepository<DAL.HolidayRental.Entities.Echange> _echangeRepository;
-        private readonly IMembreRepository<DAL.HolidayRental.Entities.Echange> _membreRepository;
+        private readonly IMembreRepository<DAL.HolidayRental.Entities.Membre> _membreRepository;
 
         public EchangeService(
             IEchangeRepository<DAL.HolidayRental.Entities.Echange> echangeRepository,

@@ -14,6 +14,8 @@ namespace BLL.HolidayRental.Entities
         public string statutEchange { get; set; }
         public int Membre_idMembre { get; set; }
         public Membre idMembre { get; set; }
+        public Membre Membre { get; internal set; }
+        public Membre Echange { get; internal set; }
 
         public Echange(int IdEchange, int NumeroReservation, DateTime DateReservation, DateTime DateEntree, DateTime DateSortie, DateTime DateReglement, string MoyenPaiement, string StatusEchange, int IdMembre)
         {

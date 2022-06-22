@@ -39,7 +39,7 @@ namespace BLL.HolidayRental.Services
 
         public IEnumerable<Membre> GetById(int idMembre)
         {
-            return _membreRepository.GetByEchangeId(idMembre).Select(m => m.ToBLL());
+            return _membreRepository.GetById(idMembre).Select(m => m.ToBLL());
         }
 
         public int Insert(Membre entity)

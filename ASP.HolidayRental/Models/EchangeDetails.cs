@@ -17,6 +17,8 @@ namespace ASP.HolidayRental.Models
         public string moyenPaiement { get; set; }
         public string statutEchange { get; set; }
         public int idMembre { get; set; }
+        public int idBien { get; set; }
         public IEnumerable<MembreDetails> Membres { get; set; }
+        public IEnumerable<BienDetails> Biens { get; set; }
     }
 }

@@ -19,5 +19,7 @@ namespace ASP.HolidayRental.Models
         public string identifiant { get; set; }
         public string motDePasse { get; set; }
         public bool CGV { get; set; }
+        public int idEchange { get; set; }
+        public IEnumerable<EchangeDetails> Echanges { get; set; }
     }
 }

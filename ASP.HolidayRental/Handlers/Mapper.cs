@@ -1,9 +1,6 @@
 ﻿using ASP.HolidayRental.Models;
 using BLL.HolidayRental.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace ASP.HolidayRental.Handlers
 {
@@ -56,7 +53,8 @@ namespace ASP.HolidayRental.Handlers
                 dateReglement = entity.dateReglement,
                 moyenPaiement = entity.moyenPaiement,
                 statutEchange = entity.statutEchange,
-                idMembre = entity.Membre_idMembre
+                idMembre = entity.idMembre,
+                idBien = entity.idBien
             };
         }
     }

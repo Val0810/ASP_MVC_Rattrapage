@@ -12,12 +12,12 @@ namespace BLL.HolidayRental.Entities
         public DateTime dateReglement { get; set; }
         public string moyenPaiement { get; set; }
         public string statutEchange { get; set; }
-        public int Membre_idMembre { get; set; }
-        public Membre idMembre { get; set; }
-        public Membre Membre { get; internal set; }
-        public Membre Echange { get; internal set; }
+        public int idMembre { get; set; }
+        public int idBien { get; set; }
+        public Membre Membre { get; set; }
+        public Bien Bien { get; set; }
 
-        public Echange(int IdEchange, int NumeroReservation, DateTime DateReservation, DateTime DateEntree, DateTime DateSortie, DateTime DateReglement, string MoyenPaiement, string StatusEchange, int IdMembre)
+        public Echange(int IdEchange, int NumeroReservation, DateTime DateReservation, DateTime DateEntree, DateTime DateSortie, DateTime DateReglement, string MoyenPaiement, string StatusEchange, int IdMembre, int IdBien, Membre membre, Bien bien)
         {
             idEchange = IdEchange;
             numeroReservation = NumeroReservation;
@@ -26,8 +26,27 @@ namespace BLL.HolidayRental.Entities
             dateReglement = DateReglement;
             moyenPaiement = MoyenPaiement;
             statutEchange = StatusEchange;
-            Membre_idMembre = IdMembre;
-            idMembre = null;
+            Membre = membre;
+            if (membre == null) throw new ArgumentNullException(nameof(idMembre));
+            idMembre = IdMembre;
+            Bien = bien;
+            if (bien == null) throw new ArgumentNullException(nameof(idBien));
+            idBien = IdBien;
+        }
+
+        public Echange(int IdEchange, int NumeroReservation, DateTime DateReservation, DateTime DateEntree, DateTime DateSortie, DateTime DateReglement, string MoyenPaiement, string StatusEchange, int IdMembre, int IdBien)
+        {
+            idEchange = IdEchange;
+            numeroReservation = NumeroReservation;
+            dateReservation = DateReservation;
+            dateEntree = DateEntree;
+            dateReglement = DateReglement;
+            moyenPaiement = MoyenPaiement;
+            statutEchange = StatusEchange;
+            idMembre = IdMembre;
+            idBien = IdBien;
+            Membre = null;
+            Bien = null;
         }
     }
 }

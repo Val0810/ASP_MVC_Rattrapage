@@ -1,5 +1,4 @@
 ﻿using ASP.HolidayRental.Models;
-using HoliDayRental.Infrastructure.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -10,7 +9,6 @@ namespace ASP.HolidayRental.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IHttpContextAccessor _httpContext;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
@@ -18,10 +16,14 @@ namespace ASP.HolidayRental.Controllers
 
         public IActionResult Index()
         {
-            _httpContext.HttpContext.Session.SetObjectAsJson("Welcome");
+            return RedirectToAction("Index", "Membre");
+        }
+
+        public IActionResult Privacy()
+        {
             return View();
         }
-       
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

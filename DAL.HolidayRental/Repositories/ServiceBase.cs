@@ -2,6 +2,6 @@
 {
     public abstract class ServiceBase
     {
-        protected string _connString = @"Data Source=wad-04\sqlexpress;Initial Catalog=HolidayRental.Database;Integrated Security=True";
+        protected string _connString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=HolidayRental.Database;Integrated Security=True";
     }
 }

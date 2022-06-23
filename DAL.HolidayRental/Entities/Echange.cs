@@ -13,6 +13,7 @@ namespace DAL.HolidayRental.Entities
         public string moyenPaiement { get; set; }
         public string statutEchange { get; set; }
         public int idMembre { get; set; }
+        public int idBien { get; set; }
 
     }
 }

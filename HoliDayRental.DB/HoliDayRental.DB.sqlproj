@@ -62,6 +62,7 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Views\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Options.sql" />
@@ -77,6 +78,13 @@
     <Build Include="dbo\Stored Procedures\sp_RecupBienMembre.sql" />
     <Build Include="dbo\Stored Procedures\sp_RecupToutesInfosBien.sql" />
     <Build Include="dbo\Stored Procedures\sp_RecupBienDispo.sql" />
+    <Build Include="dbo\Tables\Assurance.sql" />
+    <Build Include="dbo\Tables\Avis.sql" />
+    <Build Include="dbo\Tables\Bien.sql" />
+    <Build Include="dbo\Tables\ComplementBien.sql" />
+    <Build Include="dbo\Tables\Echange.sql" />
+    <Build Include="dbo\Stored Procedures\SP_Bien_Insert.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Script.PostDeployment.sql" />

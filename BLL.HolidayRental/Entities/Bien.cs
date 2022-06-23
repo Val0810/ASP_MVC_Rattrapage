@@ -1,9 +1,22 @@
-﻿namespace BLL.HolidayRental.Entities
+﻿using System;
+
+namespace BLL.HolidayRental.Entities
 {
     public class Bien
     {
         public int idBien { get; set; }
-        public string descriptionCourte { get; set; }
+        private string _descriptionCourte;
+        public string descriptionCourte
+        {
+            get { return _descriptionCourte; }
+            set
+            {
+                string newDescriptionCourte = value.Trim();
+                if (string.IsNullOrEmpty(newDescriptionCourte)) throw new ArgumentNullException(nameof(newDescriptionCourte));
+                if (newDescriptionCourte.Length > 128) throw new ArgumentOutOfRangeException(nameof(newDescriptionCourte));
+                _descriptionCourte = newDescriptionCourte;
+            }
+        }
         public string descriptionLongue { get; set; }
         public string pays { get; set; }
         public string ville { get; set; }

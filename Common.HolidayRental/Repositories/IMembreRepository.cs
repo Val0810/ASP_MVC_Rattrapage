@@ -5,6 +5,8 @@ namespace Common.HolidayRental.Repositories
     public interface IMembreRepository<TMembre> : IRepository<TMembre, int>,
         IGetByEchangeRepository<TMembre>
     {
-        IEnumerable<TMembre> GetById(int idMembre);
+        IEnumerable<TMembre> GetByEchange(int idMembre);
+
+        IEnumerable<TMembre> GetByBien(int idMembre);
     }
 }

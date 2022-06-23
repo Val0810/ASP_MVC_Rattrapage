@@ -16,7 +16,7 @@ namespace ASP.HolidayRental.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Index", "Membre");
+            return RedirectToAction("Index", "Membre", "Bien");
         }
 
         public IActionResult Privacy()

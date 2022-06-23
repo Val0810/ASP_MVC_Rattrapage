@@ -71,6 +71,11 @@ namespace DAL.HolidayRental.Repositories
             }
         }
 
+        public IEnumerable<Echange> GetByIdBien(int idBien)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<Echange> GetByIdMembre(int idMembre)
         {
             using (SqlConnection connection = new SqlConnection(_connString))

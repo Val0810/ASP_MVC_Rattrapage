@@ -7,5 +7,6 @@ namespace Common.HolidayRental.Repositories
     {
         public IEnumerable<TEchange> Get(DateTime dateReservation);
         public IEnumerable<TEchange> GetByIdMembre(int idMembre);
+        public IEnumerable<TEchange> GetByIdBien(int idBien);
     }
 }

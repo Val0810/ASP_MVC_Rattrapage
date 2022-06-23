@@ -91,7 +91,8 @@ namespace BLL.HolidayRental.Handlers
                 entity.dateReglement,
                 entity.moyenPaiement,
                 entity.statutEchange,
-                entity.idMembre
+                entity.idMembre,
+                entity.idBien
                 );
         }
 
@@ -108,10 +109,10 @@ namespace BLL.HolidayRental.Handlers
                 dateReglement = entity.dateReglement,
                 moyenPaiement = entity.moyenPaiement,
                 statutEchange = entity.statutEchange,
-                idMembre = entity.Membre_idMembre
+                idMembre = entity.idMembre,
+                idBien = entity.idBien
             };
-        }
-        
+        }        
        
     }
 }
